@@ -14,13 +14,14 @@ ruleset a144x172 {
 	}
 
 	global {
-
+		a_me = keys:a();
+		c_me = keys:c();
 	}
 
 	rule first_rule {
 		select when pageview ".*" setting ()
 		pre {
-		
+			b_me = keys:b();
 		}
 		notify("Hello World", "This is a sample rule.");
 	}

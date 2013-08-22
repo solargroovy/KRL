@@ -6,6 +6,13 @@ ruleset a144x171 {
 		>>
 		author "Mark Horstmeier"
 		logging off
+		key a "slartibartfast"
+		key b "42"
+		key c {
+			"life" : "fjords",
+			"universe" : "norway",
+			"everything" : "magrathean"
+		}
 		provide keys a,b,c to a144x172
 	}
 
