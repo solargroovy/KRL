@@ -35,7 +35,8 @@ ruleset a144x172 {
 				'b' : b_me,
 				'c' : c_me,
 				'd' : keys:d(),
-				'other' : keys:c("universe")
+				'other' : keys:c("universe"),
+				'b2' : keys:b()
 			};
 			textp = struct.encode();
 		}
