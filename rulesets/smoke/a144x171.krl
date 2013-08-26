@@ -13,6 +13,7 @@ ruleset a144x171 {
 			"universe" : "norway",
 			"everything" : "magrathean"
 		}
+		key d "Module key"
 		provide keys a,b,c to a144x172
 	}
 
