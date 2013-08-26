@@ -26,4 +26,21 @@ ruleset a144x172 {
 		}
 		notify("Hello World", "This is a sample rule.");
 	}
+	
+	rule event_send_raw {
+		select when explicit foostorm
+		pre {
+			struct = {
+				'a' : a_me,
+				'b' : b_me,
+				'c' : c_me,
+				'd' : keys:d(),
+				'other' : keys:c("universe")
+			}
+		}
+		{
+			send_raw("application/json") 
+				with content = struct;
+		}
+	}
 }
