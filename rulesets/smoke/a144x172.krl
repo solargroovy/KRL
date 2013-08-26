@@ -39,7 +39,7 @@ ruleset a144x172 {
 			}
 		}
 		{
-			send_raw("application/json") 
+			send_raw("text/plain") 
 				with content = struct;
 		}
 	}
