@@ -36,11 +36,12 @@ ruleset a144x172 {
 				'c' : c_me,
 				'd' : keys:d(),
 				'other' : keys:c("universe")
-			}
+			};
+			textp = struct.encode();
 		}
 		{
 			send_raw("text/plain") 
-				with content = struct;
+				with content = textp;
 		}
 	}
 }
