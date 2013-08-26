@@ -7,6 +7,7 @@ ruleset a144x172 {
 		author "Mark Horstmeier"
 		logging off
 		use module a144x171
+		key d "local key"
 	}
 
 	dispatch {
