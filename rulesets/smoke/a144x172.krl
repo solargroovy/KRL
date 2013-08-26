@@ -30,6 +30,7 @@ ruleset a144x172 {
 	rule event_send_raw {
 		select when explicit foostorm
 		pre {
+			b_me = keys:b();
 			struct = {
 				'a' : a_me,
 				'b' : b_me,
