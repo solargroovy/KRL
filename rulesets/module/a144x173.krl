@@ -32,6 +32,8 @@ ruleset a144x173 {
 		pre {
 		
 		}
-		notify("Hello World", "This is a sample rule.");
+		{
+			notify("Hello World", "Key Provider module.");
+		}
 	}
 }
