@@ -27,11 +27,19 @@ ruleset a144x172 {
 			kStr = ksc.encode();
 			blob = <<#{a_me}<br>#{b_me}<br>#{myStr}<br>#{kStr} >>;
 			foo = pci:exists("meh@kynetx.com");
+			uname = random:word();
+			response = pci:new_cloud({
+				"username" : uname,
+				"firstname" : "Tester",
+				"lastname" : "McTest",
+				"password" : "coolranchdoritos"
+			});
 			
 		}
 		{
 		notify("Hello World",blob );
 		notify("Authorized: ", foo);
+		notify("Created: ",response);
 		}
 	}
 }
