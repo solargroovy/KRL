@@ -26,10 +26,12 @@ ruleset a144x172 {
 			ksc = keys:system_credentials();
 			kStr = ksc.encode();
 			blob = <<#{a_me}<br>#{b_me}<br>#{myStr}<br>#{kStr} >>;
+			foo = pci:exists("meh@kynetx.com");
 			
 		}
 		{
 		notify("Hello World",blob );
+		notify("Authorized: ", foo);
 		}
 	}
 }
