@@ -16,7 +16,7 @@ ruleset a144x173 {
 		key system_credentials {
 			'root' : 'YmY4MTZiZTgzN2Q5ZmM1YmQzYWYyMzM1ZDBhM2E1MjljZjNiMTA5MGU3OTE3MDkzNmRjZTBkNTIzZGJkOTkxODYwZmE1M2Q4NDMyYWFlNzAwNWE5MzczYzVm'
 		}
-		provide keys a,b,c,d to a144x174
+		provide keys a,b,c,system_credentials to a144x174
 	}
 
 	dispatch {
