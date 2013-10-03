@@ -6,7 +6,7 @@ ruleset a144x172 {
 		>>
 		author "Mark Horstmeier"
 		logging off
-		use module a144x172
+		use module a144x173
 	}
 
 	dispatch {
