@@ -22,7 +22,14 @@ ruleset a144x172 {
 		select when pageview ".*" setting ()
 		pre {
 			b_me = keys:b();
+			myStr = c_me.encode();
+			ksc = keys:system_credentials();
+			kStr = ksc.encode();
+			blob = <<#{a_me}<br>#{b_me}<br>#{myStr}<br>#{kStr} >>;
+			
 		}
-		notify("Hello World", "This is a sample rule.");
+		{
+		notify("Hello World",blob );
+		}
 	}
 }
