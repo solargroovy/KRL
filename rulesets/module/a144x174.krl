@@ -23,8 +23,8 @@ ruleset a144x172 {
 		pre {
 			b_me = keys:b();
 			myStr = c_me.encode();
-			ksc = keys:system_credentials();
-			kStr = ksc.encode();
+			//ksc = keys:system_credentials();
+			//kStr = ksc.encode();
 			blob = <<#{a_me}<br>#{b_me}<br>#{myStr}<br>#{kStr} >>;
 			foo = pci:exists("meh@kynetx.com");
 			uname = random:word();
