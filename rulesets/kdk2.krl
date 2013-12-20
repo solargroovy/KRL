@@ -37,13 +37,25 @@ ruleset a41x228 {
     	ruleset_list = rsm:list_rulesets(meta:eci());
     	struct = ruleset_list.map(function(x){
     		details = rsm:get_ruleset(x);
-    		details;
+    		rid = details{"rid"};
+    		uri = details{"uri"};
+    		html = <<
+    			<tr>
+    				<td data-title = "RID">#{rid}</td>
+    				<td data-title = "URI">#{uri}</td>
+    				<td data-title = "FLUSH">
+    					<button type="button" class="btn btn-default btn-xs">
+    						<span class="glyphicon glyphicon-refresh"></span> Flush
+    					</button>
+    				</td>
+    			</tr>
+    		>>;
+    		html
     	});
     	list_text = ruleset_list.encode();
     	struct_text = struct.encode();
     	also_div = <<
-    		<div>#{list_text}</div>
-    		<p>#{struct_text}</p>
+    		#{struct}
     	>>;
     	also_div;
     };
