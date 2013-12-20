@@ -33,6 +33,14 @@ ruleset a41x228 {
   }
 
   global {
+    get_rulesets_gallery = function() {
+    	ruleset_list = rsm:list_rulesets(meta:eci());
+    	list_text = ruleset_list.encode();
+    	also_div = <<
+    		<div>#{list_text}</div>
+    	>>;
+    	also_div;
+    };
     get_apps_gallery = function(){
       appThumbnails = appManager:get_my_apps().values().map(function(app) {
         appName = app{'appName'};
@@ -93,13 +101,14 @@ ruleset a41x228 {
     select when web cloudAppSelected
     pre {
       appsGallery = get_apps_gallery();
-
+	  rulesetsGallery = get_rulesets_gallery();
       html = <<
         <p>
           Welcome to the Kynetx Developer Kit. Below are your applications. Click on one to view more information about it.
         </p>
 
         #{appsGallery}
+        #{rulesetsGallery}
       >>;
 
       appMenu = [
