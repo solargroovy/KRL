@@ -10,7 +10,7 @@ ruleset a41x228 {
 
       Copyright 2013 Kynetx, All Rights Reserved
     >>
-    author "Jessie A. Morris"
+    author "Jessie A. Morris and MEH"
 
     use module a169x701 alias CloudRain
     use module a41x196 alias SquareTag
@@ -130,7 +130,7 @@ ruleset a41x228 {
       ];
     }
     {
-      CloudRain:createLoadPanel("Kynetx Developer Kit", appMenu, html);
+      CloudRain:createLoadPanel("Kynetx Developer Kit--Good Parts Version", appMenu, html);
     }
   }
 
