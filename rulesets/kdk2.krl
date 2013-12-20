@@ -35,9 +35,15 @@ ruleset a41x228 {
   global {
     get_rulesets_gallery = function() {
     	ruleset_list = rsm:list_rulesets(meta:eci());
+    	struct = ruleset_list.map(function(x){
+    		details = rsm:get_ruleset(x);
+    		struct;
+    	});
     	list_text = ruleset_list.encode();
+    	struct_text = struct.encode();
     	also_div = <<
     		<div>#{list_text}</div>
+    		<p>#{struct_text}</p>
     	>>;
     	also_div;
     };
