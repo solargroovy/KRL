@@ -129,7 +129,9 @@ ruleset a41x228 {
           </ul>
           <div class="tab-content" id="kdkTabContent">
             <div class="tab-pane fade active in" id="rulesetTab">
+            <table class="table">
               #{rulesetsGallery}
+            </table>
             </div>
 
             <div class="tab-pane fade" id="appsTab">
