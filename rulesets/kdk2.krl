@@ -51,9 +51,7 @@ ruleset a41x228 {
     			</tr>
     		>>;
     		html
-    	});
-    	list_text = ruleset_list.encode();
-    	struct_text = struct.encode();
+    	}).join(" ");
     	also_div = <<
     		#{struct}
     	>>;
