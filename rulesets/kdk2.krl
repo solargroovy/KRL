@@ -112,9 +112,22 @@ ruleset a41x228 {
         <p>
           Welcome to the Kynetx Developer Kit. Below are your applications. Click on one to view more information about it.
         </p>
+		<div class="squareTag wrapper">
+          <ul id="kdkTab" class="nav nav-tabs">
+          	<li class="active"><a href="#rulesetTab" data-toggle="tab">Rulesets</a></li>
+          	<li class=""><a href="#appsTab" data-toggle="tab">Applications</a></li>
+          </ul>
+          <div class="tab-content" id="kdkTabContent">
+            <div class="tab-pane fade active in" id="rulesetTab">
+              #{rulesetsGallery}
+            </div>
 
-        #{appsGallery}
-        #{rulesetsGallery}
+            <div class="tab-pane fade" id="appsTab">
+              #{appsGallery}
+            </div>
+          </div>	
+        
+        
       >>;
 
       appMenu = [
