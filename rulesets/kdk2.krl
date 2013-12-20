@@ -37,7 +37,7 @@ ruleset a41x228 {
     	ruleset_list = rsm:list_rulesets(meta:eci());
     	struct = ruleset_list.map(function(x){
     		details = rsm:get_ruleset(x);
-    		struct;
+    		details;
     	});
     	list_text = ruleset_list.encode();
     	struct_text = struct.encode();
