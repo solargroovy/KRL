@@ -51,7 +51,8 @@ ruleset a41x228 {
     					<script>
     						$K('##{jrid}').click(function() {
     							$K(this).attr('disabled','disabled');
-    							$K.post("ruleset/flush/#{rid}",function( data ) {
+    							var fget = $K.get("ruleset/flush/#{rid}");
+    							fget.done(function( data ) {
     								$K('#flushstatus').html(data);
     							});
     						});
