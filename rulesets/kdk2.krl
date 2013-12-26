@@ -49,7 +49,8 @@ ruleset a41x228 {
     						<span class="glyphicon glyphicon-refresh"></span> Flush
     					</button>
     					<script>
-    						$K('##{jrid}').click(function() {
+    						$K('##{jrid}').click(function(event) {
+    							event.preventDefault();
     							$K(this).attr('disabled','disabled');
     							var fget = $K.get("ruleset/flush/#{rid}");
     							fget.done(function( data ) {
