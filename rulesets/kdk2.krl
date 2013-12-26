@@ -50,7 +50,10 @@ ruleset a41x228 {
     					</button>
     					<script>
     						$K('##{jrid}').click(function() {
-    							$K(this).attr('disabled','disabled')
+    							$K(this).attr('disabled','disabled');
+    							$K.post("ruleset/flush/#{rid}",function( data ) {
+    								$K('#flushstatus').html(data);
+    							});
     						});
     					</script>
     				</td>
@@ -138,6 +141,7 @@ ruleset a41x228 {
             <table class="table">
               #{rulesetsGallery}
             </table>
+            <div id="flushstatus"></div>
             </div>
 
             <div class="tab-pane fade" id="appsTab">
