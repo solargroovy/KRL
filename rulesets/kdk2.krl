@@ -39,14 +39,14 @@ ruleset a41x228 {
     		details = rsm:get_ruleset(x);
     		rid = details{"rid"};
     		uri = details{"uri"};
-    		jrid = "flush_" + rid.replace("/\./","_");
+    		jrid = "flush_" + rid.replace(re/\./,"_");
     		html = <<
     			<tr>
     				<td data-title = "RID">#{rid}</td>
     				<td data-title = "URI">#{uri}</td>
     				<td data-title = "FLUSH">
     					<button type="button" id="#{jrid}" class="btn btn-default btn-xs"
-    						onclick="$K('#' + '#{jrid}').attr('disabled','disabled');false;"
+    						onclick="$K('##{jrid}').attr('disabled','disabled');false;"
     					>
     						<span class="glyphicon glyphicon-refresh"></span> Flush
     					</button>
