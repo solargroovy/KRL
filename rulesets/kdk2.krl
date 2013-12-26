@@ -625,18 +625,18 @@ ruleset b503049x0 {
     }
   }
 
-//  rule deleteDeveloperLoggingECI {
-//    select when web submit "#formDeleteDeveloperLogging"
-//    pre {
-//      loggingECI = pci:clear_logging(meta:eci());
-//    }
-//    {
-//      replace_inner("#loggingECI","Logging ECI is not set" );
-//    }
-//    always {
-//    	clear ent:logging_eci loggingECI;
-//    }
-//  }
+  rule deleteDeveloperLoggingECI {
+    select when web submit "#formDeleteDeveloperLogging"
+    pre {
+      loggingECI = pci:clear_logging(meta:eci());
+    }
+    {
+      replace_inner("#loggingECI","Logging ECI is not set" );
+    }
+    always {
+    	clear ent:logging_eci;
+    }
+  }
 
   rule getScheduledLog {
     select when web submit "#formLookupScheduledEvent"
