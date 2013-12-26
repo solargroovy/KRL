@@ -1,4 +1,4 @@
-ruleset a41x228 {
+ruleset b503049x0 {
   meta {
     name "KDK"
     description <<
@@ -93,6 +93,13 @@ ruleset a41x228 {
 
       appGallery
     };
+    
+    get_devlog_gallery = function() {
+    	log_table = <<
+    		<div></div>
+    	>>;
+    	log_table
+    };
 
     css <<
         #kdk-channel-manager {
@@ -130,6 +137,7 @@ ruleset a41x228 {
     pre {
       appsGallery = get_apps_gallery();
 	  rulesetsGallery = get_rulesets_gallery();
+	  devlogGallery = get_devlog_gallery();
       html = <<
         <p>
           Welcome to the Kynetx Developer Kit. Below are your applications. Click on one to view more information about it.
@@ -138,6 +146,7 @@ ruleset a41x228 {
           <ul id="kdkTab" class="nav nav-tabs">
           	<li class="active"><a href="#rulesetTab" data-toggle="tab">Rulesets</a></li>
           	<li class=""><a href="#appsTab" data-toggle="tab">Applications</a></li>
+          	<li class=""><a href="#devlogTab" data-toggle="tab">Developer Logging</a></li>
           </ul>
           <div class="tab-content" id="kdkTabContent">
             <div class="tab-pane fade active in" id="rulesetTab">
@@ -148,6 +157,9 @@ ruleset a41x228 {
             </div>
 
             <div class="tab-pane fade" id="appsTab">
+              #{appsGallery}
+            </div>
+            <div class="tab-pane fade" id="devlogTab">
               #{appsGallery}
             </div>
           </div>	
@@ -171,6 +183,10 @@ ruleset a41x228 {
         {
           "label": "Lookup Scheduled Event",
           "action": "lookupScheduledEvent"
+        },
+        {
+          "label": "Activate Developer Logs",
+          "action": "activateDevLogs"
         },
         {
           "label": "List Entity & App Variables",
@@ -570,6 +586,19 @@ ruleset a41x228 {
       CloudRain:createLoadPanel("Entity & App Variables", [], html);
       CloudRain:skyWatchSubmit("#formLookupScheduledEvent", meta:eci());
     }
+  }
+  
+  rule activateDevLog {
+  	select when web cloudAppAction action re/activateDevLogs/
+  	pre {
+  	  hasLogging = pci:get_logging(meta:eci());
+  	  html = <<
+  	  	<div>Logging = #{hasLogging} </div>
+  	  >>;
+  	}
+  	{
+  		CloudRain:createLoadPanel("Activate Developer Logging", [], html);
+  	}
   }
 
   rule getScheduledLog {
