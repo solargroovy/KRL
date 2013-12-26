@@ -56,6 +56,7 @@ ruleset a41x228 {
     							fget.done(function( data ) {
     								$K('#flushstatus').html(data);
     							});
+    							return false;
     						});
     					</script>
     				</td>
