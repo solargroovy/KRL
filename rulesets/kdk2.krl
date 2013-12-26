@@ -46,7 +46,7 @@ ruleset a41x228 {
     				<td data-title = "URI">#{uri}</td>
     				<td data-title = "FLUSH">
     					<button type="button" id="#{jrid}" class="btn btn-default btn-xs"
-    						onclick="$K('#' + '#{jrid}').toggle();false;"
+    						onclick="$K('#' + '#{jrid}').attr('disabled','disabled');false;"
     					>
     						<span class="glyphicon glyphicon-refresh"></span> Flush
     					</button>
