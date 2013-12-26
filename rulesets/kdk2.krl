@@ -48,8 +48,8 @@ ruleset a41x228 {
     					<button type="button" id="#{jrid}" class="btn btn-default btn-xs">
     						<span class="glyphicon glyphicon-refresh"></span> Flush
     					</button>
-    					<script type="text/javascript">
-    						$("#" + #{jrid}).onclick=function() {alert("#{rid}");return false}
+    					<script>
+    						$("#" + #{jrid}).click=function() {alert("#{rid}");return false}
     					</script>
     				</td>
     			</tr>
