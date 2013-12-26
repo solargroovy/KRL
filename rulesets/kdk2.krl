@@ -45,11 +45,12 @@ ruleset a41x228 {
     				<td data-title = "RID">#{rid}</td>
     				<td data-title = "URI">#{uri}</td>
     				<td data-title = "FLUSH">
-    					<button type="button" id="#{jrid}" class="btn btn-default btn-xs"
-    						onclick="$K('##{jrid}').attr('disabled','disabled');false;"
-    					>
+    					<button type="button" id="#{jrid}" class="btn btn-default btn-xs">
     						<span class="glyphicon glyphicon-refresh"></span> Flush
     					</button>
+    					<script>
+    						$K('##{jrid}').attr('disabled','disabled');
+    					</script>
     				</td>
     			</tr>
     		>>;
