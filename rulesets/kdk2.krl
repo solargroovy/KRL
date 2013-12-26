@@ -615,6 +615,7 @@ ruleset b503049x0 {
         </form>
         <div id="loggingECI">#{leci}</div>
   	  >>;
+  	  html = hasLogging => ahtml | bhtml;
   	}
   	{
   		CloudRain:createLoadPanel("Activate Developer Logging", [], html);
