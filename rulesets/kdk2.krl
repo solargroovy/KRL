@@ -39,7 +39,7 @@ ruleset a41x228 {
     		details = rsm:get_ruleset(x);
     		rid = details{"rid"};
     		uri = details{"uri"};
-    		jrid = "flush_" + rid;
+    		jrid = "flush_" + rid.replace("/\./","_");
     		html = <<
     			<tr>
     				<td data-title = "RID">#{rid}</td>
