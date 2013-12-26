@@ -592,40 +592,51 @@ ruleset b503049x0 {
   	select when web cloudAppAction action re/activateDevLogs/
   	pre {
   	  hasLogging = pci:get_logging(meta:eci());
-  	  html = <<
+  	  leci = ent:logging_eci;
+  	  ahtml = <<
   	  	<div>Logging = #{hasLogging} </div>
-        <form id="formActivateDeveloperLogging" class="form-horizontal form-mycloud">
+        <form id="formDeleteDeveloperLogging" class="form-horizontal form-mycloud">
           <fieldset>
-            <div class="control-group">
-              <label class="control-label" for="create">Schedule ID</label>
-              <div class="controls">
-                <textarea class="input-xlarge" name="scheduleID" title="The ID of the schedule you want info for" placeholder="The ID of the schedule you want info for" required></textarea>
-              </div>
-            </div>
             <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Activate Logging</button>
+              <button type="submit" class="btn btn-primary">Delete Logging</button>
             </div>
           </fieldset>
         </form>
-        <div id="loggingECI"></div>
+        <div id="loggingECI">#{leci}</div>
   	  >>;
   	}
   	{
   		CloudRain:createLoadPanel("Activate Developer Logging", [], html);
   		CloudRain:skyWatchSubmit("#formActivateDeveloperLogging", meta:eci());
+  		CloudRain:skyWatchSubmit("#formDeleteDeveloperLogging", meta:eci());
   	}
   }
 
-  rule makeDeveloperLoggingECI {
-    select when web submit "#formActivateDeveloperLogging"
-    pre {
-      loggingECI = pci:set_logging(meta:eci());
-    }
-    {
-      replace_inner("#loggingECI","Logging ECI is " + loggingECI);
-    }
-  }
+//  rule makeDeveloperLoggingECI {
+//    select when web submit "#formActivateDeveloperLogging"
+//    pre {
+//      loggingECI = pci:set_logging(meta:eci());
+//    }
+//    {
+//      replace_inner("#loggingECI","Logging ECI is " + loggingECI);
+//    }
+//    always {
+//    	set ent:logging_eci loggingECI;
+//    }
+//  }
 
+//  rule deleteDeveloperLoggingECI {
+//    select when web submit "#formDeleteDeveloperLogging"
+//    pre {
+//      loggingECI = pci:clear_logging(meta:eci());
+//    }
+//    {
+//      replace_inner("#loggingECI","Logging ECI is not set" );
+//    }
+//    always {
+//    	clear ent:logging_eci loggingECI;
+//    }
+//  }
 
   rule getScheduledLog {
     select when web submit "#formLookupScheduledEvent"
