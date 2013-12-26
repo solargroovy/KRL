@@ -45,7 +45,9 @@ ruleset a41x228 {
     				<td data-title = "RID">#{rid}</td>
     				<td data-title = "URI">#{uri}</td>
     				<td data-title = "FLUSH">
-    					<button type="button" id="#{jrid}" class="btn btn-default btn-xs">
+    					<button type="button" id="#{jrid}" class="btn btn-default btn-xs"
+    						onclick="alert('#{rid}');false;
+    					>
     						<span class="glyphicon glyphicon-refresh"></span> Flush
     					</button>
     				</td>
