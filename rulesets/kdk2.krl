@@ -98,8 +98,9 @@ ruleset b503049x0 {
     	dlogs = pci:get_logs(ent:logging_eci);
     	struct = dlogs.encode();
     	log_table = <<
-    	    <h3>Logs</h3>
-    		<div>#{struct}</div>
+    	    
+    		<div><h3>Logs</h3>
+    		<p>#{struct}</p></div>
     	>>;
     	log_table
     };
