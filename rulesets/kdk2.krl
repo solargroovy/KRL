@@ -39,14 +39,18 @@ ruleset a41x228 {
     		details = rsm:get_ruleset(x);
     		rid = details{"rid"};
     		uri = details{"uri"};
+    		jrid = "flush-" + rid;
     		html = <<
     			<tr>
     				<td data-title = "RID">#{rid}</td>
     				<td data-title = "URI">#{uri}</td>
     				<td data-title = "FLUSH">
-    					<button type="button" class="btn btn-default btn-xs">
+    					<button type="button" id="#{jrid}" class="btn btn-default btn-xs">
     						<span class="glyphicon glyphicon-refresh"></span> Flush
     					</button>
+    					<script type="text/javascript">
+    						$("#" + #{jrid}).onclick=function() {alert("#{rid}");return false}
+    					</script>
     				</td>
     			</tr>
     		>>;
