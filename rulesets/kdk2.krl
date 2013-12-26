@@ -594,12 +594,38 @@ ruleset b503049x0 {
   	  hasLogging = pci:get_logging(meta:eci());
   	  html = <<
   	  	<div>Logging = #{hasLogging} </div>
+        <form id="formActivateDeveloperLogging" class="form-horizontal form-mycloud">
+          <fieldset>
+            <div class="control-group">
+              <label class="control-label" for="create">Schedule ID</label>
+              <div class="controls">
+                <textarea class="input-xlarge" name="scheduleID" title="The ID of the schedule you want info for" placeholder="The ID of the schedule you want info for" required></textarea>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Activate Logging</button>
+            </div>
+          </fieldset>
+        </form>
+        <div id="loggingECI"></div>
   	  >>;
   	}
   	{
   		CloudRain:createLoadPanel("Activate Developer Logging", [], html);
+  		CloudRain:skyWatchSubmit("#formActivateDeveloperLogging", meta:eci());
   	}
   }
+
+  rule makeDeveloperLoggingECI {
+    select when web submit "#formActivateDeveloperLogging"
+    pre {
+      loggingECI = pci:set_logging(meta:eci());
+    }
+    {
+      replace_inner("#loggingECI","Logging ECI is " + loggingECI);
+    }
+  }
+
 
   rule getScheduledLog {
     select when web submit "#formLookupScheduledEvent"
