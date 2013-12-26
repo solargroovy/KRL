@@ -52,7 +52,7 @@ ruleset a41x228 {
     						$K('##{jrid}').click(function(event) {
     							event.preventDefault();
     							$K(this).attr('disabled','disabled');
-    							var fget = $K.get("ruleset/flush/#{rid}");
+    							var fget = $K.get("https:cs.kobj.net/ruleset/flush/#{rid}");
     							fget.done(function( data ) {
     								alert(data);
     							});
