@@ -49,7 +49,9 @@ ruleset a41x228 {
     						<span class="glyphicon glyphicon-refresh"></span> Flush
     					</button>
     					<script>
-    						$K('##{jrid}').attr('disabled','disabled');
+    						$K('##{jrid}').click(function() {
+    							$K(this).attr('disabled','disabled')
+    						});
     					</script>
     				</td>
     			</tr>
