@@ -99,8 +99,7 @@ ruleset b503049x0 {
     	struct = dlogs.encode();
     	log_table = <<
     	    
-    		<div>
-    		<p>#{struct}</p></div>
+    		#{struct}
     	>>;
     	log_table
     };
@@ -164,7 +163,7 @@ ruleset b503049x0 {
               #{appsGallery}
             </div>
             <div class="tab-pane fade" id="devlogTab">
-              #{appsGallery}
+              #{devlogGallery}
             </div>
           </div>	
         
