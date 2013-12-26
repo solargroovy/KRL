@@ -54,7 +54,7 @@ ruleset a41x228 {
     							$K(this).attr('disabled','disabled');
     							var fget = $K.get("ruleset/flush/#{rid}");
     							fget.done(function( data ) {
-    								$K('#flushstatus').append(data);
+    								alert(data);
     							});
     							return false;
     						});
