@@ -604,6 +604,17 @@ ruleset b503049x0 {
         </form>
         <div id="loggingECI">#{leci}</div>
   	  >>;
+  	  bhtml = <<
+  	  	<div>Logging = #{hasLogging} </div>
+        <form id="formActivateDeveloperLogging" class="form-horizontal form-mycloud">
+          <fieldset>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Activate Logging</button>
+            </div>
+          </fieldset>
+        </form>
+        <div id="loggingECI">#{leci}</div>
+  	  >>;
   	}
   	{
   		CloudRain:createLoadPanel("Activate Developer Logging", [], html);
