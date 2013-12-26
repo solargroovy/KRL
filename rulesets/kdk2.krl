@@ -95,8 +95,10 @@ ruleset b503049x0 {
     };
     
     get_devlog_gallery = function() {
+    	dlogs = pci:get_logs(ent:logging_eci);
+    	struct = dlogs.encode();
     	log_table = <<
-    		<div></div>
+    		<div>#{struct}</div>
     	>>;
     	log_table
     };
