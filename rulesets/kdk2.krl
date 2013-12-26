@@ -612,18 +612,18 @@ ruleset b503049x0 {
   	}
   }
 
-//  rule makeDeveloperLoggingECI {
-//    select when web submit "#formActivateDeveloperLogging"
-//    pre {
-//      loggingECI = pci:set_logging(meta:eci());
-//    }
-//    {
-//      replace_inner("#loggingECI","Logging ECI is " + loggingECI);
-//    }
-//    always {
-//    	set ent:logging_eci loggingECI;
-//    }
-//  }
+  rule makeDeveloperLoggingECI {
+    select when web submit "#formActivateDeveloperLogging"
+    pre {
+      loggingECI = pci:set_logging(meta:eci());
+    }
+    {
+      replace_inner("#loggingECI","Logging ECI is " + loggingECI);
+    }
+    always {
+    	set ent:logging_eci loggingECI;
+    }
+  }
 
 //  rule deleteDeveloperLoggingECI {
 //    select when web submit "#formDeleteDeveloperLogging"
