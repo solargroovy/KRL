@@ -162,9 +162,7 @@ ruleset b503049x0 {
             <div class="tab-pane fade" id="appsTab">
               #{appsGallery}
             </div>
-            <div class="tab-pane fade" id="devlogTab">
-              #{devlogGallery}
-            </div>
+            
           </div>	
         
         
