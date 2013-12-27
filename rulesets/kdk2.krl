@@ -98,12 +98,19 @@ ruleset b503049x0 {
     	dlogs = pci:get_logs(ent:logging_eci);
     	dkeys = dlogs.keys();
     	foo = dkeys.encode();
+    	ltable = dkeys.map(function(x) {
+    		obj = dlogs{x};
+    		cols = obj.keys();
+    		ckeys = cols.join(" ");
+    		ckeys
+    	}).join("<br/>");
     	//struct = dlogs.encode();
     	struct = ent:logging_eci;
     	log_table = <<
     	    
     		<div>#{struct}</div>
     		<div>#{foo}</div>
+    		<div>#{ltable}</div>
     	>>;
     	log_table
     };
