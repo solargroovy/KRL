@@ -99,7 +99,7 @@ ruleset b503049x0 {
     	struct = dlogs.encode();
     	log_table = <<
     	    
-    		#{struct}
+    		<div>#{struct}</div>
     	>>;
     	log_table
     };
