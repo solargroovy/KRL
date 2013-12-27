@@ -95,8 +95,9 @@ ruleset b503049x0 {
     };
     
     get_devlog_gallery = function() {
-    	dlogs = pci:get_logs(ent:logging_eci);
-    	struct = dlogs.encode();
+    	//dlogs = pci:get_logs(ent:logging_eci);
+    	//struct = dlogs.encode();
+    	struct = ent:logging_eci;
     	log_table = <<
     	    
     		<div>#{struct}</div>
@@ -140,7 +141,7 @@ ruleset b503049x0 {
     pre {
       appsGallery = get_apps_gallery();
 	  rulesetsGallery = get_rulesets_gallery();
-	  //devlogGallery = get_devlog_gallery();
+	  devlogGallery = get_devlog_gallery();
       html = <<
         <p>
           Welcome to the Kynetx Developer Kit. Below are your applications. Click on one to view more information about it.
