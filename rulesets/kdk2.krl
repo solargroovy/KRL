@@ -140,7 +140,7 @@ ruleset b503049x0 {
     pre {
       appsGallery = get_apps_gallery();
 	  rulesetsGallery = get_rulesets_gallery();
-	  devlogGallery = get_devlog_gallery();
+	  //devlogGallery = get_devlog_gallery();
       html = <<
         <p>
           Welcome to the Kynetx Developer Kit. Below are your applications. Click on one to view more information about it.
@@ -162,7 +162,9 @@ ruleset b503049x0 {
             <div class="tab-pane fade" id="appsTab">
               #{appsGallery}
             </div>
-            
+            <div class="tab-pane fade" id="devlogTab">
+              #{devlogGallery}
+            </div>
           </div>	
         
         
