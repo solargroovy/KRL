@@ -101,6 +101,7 @@ ruleset b503049x0 {
     	ltable = dkeys.map(function(x) {
     		obj = dlogs{x};
     		log_text = obj{'log_text'};
+    		brief = log_text.substr(25);
     		created = obj{'created'};
     		html = <<
     			<tr>
