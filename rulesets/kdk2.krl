@@ -100,17 +100,30 @@ ruleset b503049x0 {
     	foo = dkeys.encode();
     	ltable = dkeys.map(function(x) {
     		obj = dlogs{x};
-    		cols = obj.keys();
-    		ckeys = cols.join(" ");
-    		ckeys
-    	}).join("<br/>");
+    		log_text = obj{'log_text'};
+    		created = obj{'created'};
+    		html = <<
+    			<tr>
+    				<td><input type="button" class="btn toggle-btn" value="#{created}" id="button-#{created}">
+    				<div id="div-#{created}">
+    					<p>#{log_text}</p>
+    				</div>
+    			</tr>
+    			<script>
+    				$K('#button-#{created}').click(function() {
+    					$K('#div-#{created}').collapse('toggle');
+    				});
+    			</script>
+    		>>;
+    		html
+    	}).join(" ");
     	//struct = dlogs.encode();
     	struct = ent:logging_eci;
     	log_table = <<
     	    
     		<div>#{struct}</div>
     		<div>#{foo}</div>
-    		<div>#{ltable}</div>
+    		<table>#{ltable}</table>
     	>>;
     	log_table
     };
