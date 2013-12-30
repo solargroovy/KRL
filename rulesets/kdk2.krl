@@ -107,7 +107,7 @@ ruleset b503049x0 {
     			<tr>
     				<td><input type="button" class="btn toggle-btn" value="#{created}" id="button-#{created}">
     				<div id="div-#{created}">
-    					<pre>#{log_text}</pre>
+    					<pre>foo</pre>
     				</div>
     			</tr>
     			<script>
