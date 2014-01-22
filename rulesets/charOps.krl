@@ -27,7 +27,7 @@ ruleset charOps {
 		str = "abc";
 		charArray = str.split(re//);
 		strCharArray = charArray.encode();
-		single = charArray[0].sprintf("%t");
+		single = charArray[0].sprintf("%h");
     }
     {
 		notify("Char Operations",div) with sticky = true;
