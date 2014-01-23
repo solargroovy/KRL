@@ -27,13 +27,16 @@ ruleset charOps {
 		str = "abc";
 		charArray = str.split(re//);
 		strCharArray = charArray.encode();
-		single = charArray[0].sprintf("%h");
+		single = this2that:ord(str);
+		ordArray = this2that:unpack(str);
+		strOrdArray = ordArray.encode();
     }
     {
 		notify("Char Operations",div) with sticky = true;
 		before("#myHook","<br>str: " + str);
 		before("#myHook","<br>array: " + strCharArray);
 		before("#myHook","<br>char 0: " + single);
+		before("#myHook","<br>array: " + strOrdArray);
     }
   }
 
