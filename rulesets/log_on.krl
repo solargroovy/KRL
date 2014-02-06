@@ -39,7 +39,7 @@ ruleset b144x1 {
 		
     }
     {
-		notify("Logging ECI2",getLoggingForm) with sticky = true;
+		notify("Logging ECI2",getLoggingForm) with sticky = true and width=600;
 		watch("#myFORM","submit");
     }
   }
@@ -48,9 +48,14 @@ ruleset b144x1 {
   	select when web submit "#myFORM"
   	pre {
   		deci = event:attr("eci");
+  		uname = pci:get_username(deci);
+  		hasLogging = pci:get_logging(deci);
+  		blob = <<
+  			User (#{uname}) has logging #{hasLogging}
+  		>>;
   	}
   	{
-  		replace_inner("#myStatus",deci);
+  		replace_inner("#myStatus",blob);
   	}
   }
 }
