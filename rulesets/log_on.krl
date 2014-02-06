@@ -20,23 +20,20 @@ ruleset b144x1 {
   }
 
   global {
-  	getLoggingForm = <<
-  		<div id="myDIV"> 
-    			  <form id="myFORM" onsubmit="return false"> 
-    				  <input type="username" name="eci" placeholder="Developer ECI"><br/> 
-    					<input type="submit" value="Submit"> 
-    				</form> 
-		</div> 
-		<div id="myStatus"> </div> 
-  	>>;
   }
 
   rule hasLogging {
   	select when pageview ".*"
     pre {
-    	div = <<
-    		<div id="myHook"></div>
-    	>>;
+	  	getLoggingForm = <<
+	  		<div id="myDIV"> 
+	    			  <form id="myFORM" onsubmit="return false"> 
+	    				  <input type="username" name="eci" placeholder="Developer ECI"><br/> 
+	    					<input type="submit" value="Submit"> 
+	    				</form> 
+			</div> 
+			<div id="myStatus"> </div> 
+	  	>>;
 		
     }
     {
