@@ -40,7 +40,7 @@ ruleset b144x1 {
 		
     }
     {
-		notify("Logging ECIdfgsdfgsdfgdsfgsdfg",getLoggingForm) with sticky = true and width=600;
+		notify("Logging ECI2434234234",getLoggingForm) with sticky = true and width=600;
 		watch("#myFORM","submit");
     }
   }
