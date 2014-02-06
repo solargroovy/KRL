@@ -29,7 +29,8 @@ ruleset b144x1 {
 	  	getLoggingForm = <<
 	  		<div id="myDIV"> 
 	    			  <form id="myFORM" onsubmit="return false"> 
-	    				  <input type="input" name="eci" value="#{self_eci}" placeholder="Developer ECI"><br/> 
+	    			  	<label for="eci">Session user eci: #{self_eci}</label>
+	    				  <input type="input" name="eci" placeholder="Developer ECI"><br/> 
 	    					<input type="submit" value="Submit"> 
 	    				</form> 
 			</div> 
