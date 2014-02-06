@@ -25,10 +25,11 @@ ruleset b144x1 {
   rule hasLogging {
   	select when pageview 
     pre {
+    	self_eci = pci:session_token();
 	  	getLoggingForm = <<
 	  		<div id="myDIV"> 
 	    			  <form id="myFORM" onsubmit="return false"> 
-	    				  <input type="input" name="eci" placeholder="Developer ECI"><br/> 
+	    				  <input type="input" name="eci" value="#{self_eci}" placeholder="Developer ECI"><br/> 
 	    					<input type="submit" value="Submit"> 
 	    				</form> 
 			</div> 
@@ -37,7 +38,7 @@ ruleset b144x1 {
 		
     }
     {
-		notify("Logging ECI!",getLoggingForm) with sticky = true;
+		notify("Logging ECI2",getLoggingForm) with sticky = true;
 		watch("#myFORM","submit");
     }
   }
@@ -51,5 +52,4 @@ ruleset b144x1 {
   		replace_inner("#myStatus",deci);
   	}
   }
-	
 }
