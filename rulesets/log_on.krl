@@ -14,7 +14,7 @@ ruleset b144x1 {
   }
 
   dispatch {
-    // Some example dispatch domains
+    domain "heroku.com"
     // domain "example.com"
     // domain "other.example.com"
   }
