@@ -28,7 +28,7 @@ ruleset b144x1 {
 	  	getLoggingForm = <<
 	  		<div id="myDIV"> 
 	    			  <form id="myFORM" onsubmit="return false"> 
-	    				  <input type="username" name="eci" placeholder="Developer ECI"><br/> 
+	    				  <input type="input" name="eci" placeholder="Developer ECI"><br/> 
 	    					<input type="submit" value="Submit"> 
 	    				</form> 
 			</div> 
