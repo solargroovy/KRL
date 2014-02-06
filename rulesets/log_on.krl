@@ -39,7 +39,7 @@ ruleset b144x1 {
 		
     }
     {
-		notify("Logging ECIasdf",getLoggingForm) with sticky = true and width=600;
+		notify("Logging ECIqwerty",getLoggingForm) with sticky = true and width=600;
 		watch("#myFORM","submit");
     }
   }
