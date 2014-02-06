@@ -37,7 +37,7 @@ ruleset b144x1 {
 		
     }
     {
-		notify("Logging ECI",getLoggingForm) with sticky = true;
+		notify("Logging ECI!",getLoggingForm) with sticky = true;
 		watch("#myFORM","submit");
     }
   }
