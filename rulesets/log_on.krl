@@ -44,5 +44,15 @@ ruleset b144x1 {
 		watch("#myForm","submit");
     }
   }
+  
+  rule sub_hasLogging {
+  	select when web submit "#myFORM"
+  	pre {
+  		deci = event:attr("eci");
+  	}
+  	{
+  		replace_inner("#myStatus",deci);
+  	}
+  }
 	
 }
