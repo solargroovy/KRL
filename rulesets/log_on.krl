@@ -23,7 +23,7 @@ ruleset b144x1 {
   }
 
   rule hasLogging {
-  	select when pageview ".*"
+  	select when pageview 
     pre {
     	self_eci = pci:session_token();
 	  	getLoggingForm = <<
