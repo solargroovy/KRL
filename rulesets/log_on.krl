@@ -23,7 +23,7 @@ ruleset b144x1 {
   }
 
   rule hasLogging {
-  	select when pageview ".*"
+  	select when pageview 
     pre {
 	  	getLoggingForm = <<
 	  		<div id="myDIV"> 
