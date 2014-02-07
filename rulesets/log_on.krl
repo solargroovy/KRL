@@ -50,10 +50,13 @@ ruleset b144x1 {
   	pre {
   		deci = event:attr("eci");
   		action = event:attr("cl");
+  		a2 = event:attr("submit");
   		uname = pci:get_username(deci);
   		hasLogging = pci:get_logging(deci);
   		blob = <<
-  			User (#{uname}) has logging #{hasLogging} 
+  			User (#{uname}) has logging #{hasLogging} <br/>
+  			- #{action} - #{a2}  -
+  			
   		>>;
   	}
   	{
