@@ -65,4 +65,22 @@ ruleset b144x1 {
   		replace_inner("#myStatus",blob);
   	}
   }
+  
+   rule sub_addLogging {
+  	select when web click "#add_log"
+  	pre {
+  		deci = event:attr("eci");
+  		uname = pci:get_username(deci);
+  		hasLogging = pci:get_logging(deci);
+  		log_eci = (hasLogging) => pci:set_logging(deci) | null;
+  		blob = <<
+  			User (#{uname}) has logging eci #{log_eci} <br/>
+  			- write it down  -  			
+  		>>;
+  	}
+  	{
+  		replace_inner("#myStatus",blob);
+  	}
+  }
+  
 }
