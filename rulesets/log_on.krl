@@ -32,7 +32,8 @@ ruleset b144x1 {
 	    			  <form id="myFORM" onsubmit="return false"> 
 	    			  	<label for="eci">Session user eci: #{self_eci}</label>
 	    				  <input type="input" name="eci" placeholder="Developer ECI"><br/> 
-	    					<input type="submit" name="cl" value="Check Logging"> 
+	    					<input type="button" id="check_log" name="cl" value="Check Logging"> 
+	    					<input type="button" id="add_log" name="add" value="add Logging"> 
 	    				</form> 
 			</div> 
 			<div id="myStatus"> </div> 
@@ -41,12 +42,13 @@ ruleset b144x1 {
     }
     {
 		notify("Logging ECI77777777777777",getLoggingForm) with sticky = true and width=600;
-		watch("#myFORM","submit");
+		watch("#check_log","click");
+		watch("#add_log","click");
     }
   }
   
   rule sub_hasLogging {
-  	select when web submit "#myFORM"
+  	select when web click "#check_log"
   	pre {
   		deci = event:attr("eci");
   		action = event:attr("cl");
