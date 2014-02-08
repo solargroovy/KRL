@@ -72,7 +72,7 @@ ruleset b144x1 {
   		deci = event:attr("eci");
   		uname = pci:get_username(deci);
   		hasLogging = pci:get_logging(deci);
-  		log_eci = (hasLogging) => pci:set_logging(deci) | null;
+  		log_eci = (hasLogging) =>  null | pci:set_logging(deci);
   		blob = <<
   			User (#{uname}) has logging eci #{log_eci} <br/>
   			- write it down  -  			
