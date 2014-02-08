@@ -34,6 +34,7 @@ ruleset b144x1 {
 	    				  <input type="input" name="eci" placeholder="Developer ECI"><br/> 
 	    					<input type="button" id="check_log" name="cl" value="Check Logging"> 
 	    					<input type="button" id="add_log" name="add" value="add Logging"> 
+	    					<input type="button" id="show_log" name="add" value="Show Logs">
 	    				</form> 
 			</div> 
 			<div id="myStatus"> </div> 
@@ -44,6 +45,7 @@ ruleset b144x1 {
 		notify("Logging ECI77777777777777",getLoggingForm) with sticky = true and width=600;
 		watch("#check_log","click");
 		watch("#add_log","click");
+		watch("#show_log","click");
     }
   }
   
@@ -80,6 +82,25 @@ ruleset b144x1 {
   	}
   	{
   		replace_inner("#myStatus",blob);
+  	}
+  }
+ 
+ 
+   rule sub_showLogs {
+  	select when web click "#show_log"
+  	pre {
+  		deci = event:attr("eci");
+  		uname = pci:get_username(deci);
+  		hasLogging = pci:get_logging(deci);
+  		log_eci = (hasLogging) =>  null | pci:get_logs(deci);
+  		logstr = log_eci.encode();
+  		blob = <<
+  			User (#{uname}) has logging eci #{log_eci} <br/>
+  			- #{logstr}  -  			
+  		>>;
+  	}
+  	{
+  		replace_inner("#main",blob);
   	}
   }
   
